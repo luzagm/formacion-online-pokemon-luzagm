@@ -1,5 +1,6 @@
 import React from "react";
 import PokemonData from "../services/PokemonData";
+import Header from "./Header";
 import PokemonList from "./PokemonList";
 import "../stylesheets/App.scss";
 
@@ -42,7 +43,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <PokemonList pokemons={this.state.pokemons} />
+        <Header />
+        <PokemonList className="pokemon__page" pokemons={this.state.pokemons} />
       </div>
     );
   }

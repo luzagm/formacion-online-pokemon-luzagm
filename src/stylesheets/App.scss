@@ -1,7 +1,12 @@
-.pokemon {
-  list-style: none;
+* {
+  margin: 0;
+  padding: 0;
+}
 
-  &__types {
-    list-style: none;
-  }
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
 }

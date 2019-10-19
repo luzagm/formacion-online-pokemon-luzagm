@@ -1,5 +1,6 @@
 import React from "react";
 import PokemonCard from "./PokemonCard";
+import "../stylesheets/PokemonList.scss";
 
 const PokemonList = props => {
   if (props.pokemons.length === 0) {

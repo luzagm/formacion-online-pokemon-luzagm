@@ -1,0 +1,21 @@
+.pokemon {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 20px;
+  justify-items: center;
+}
+
+@media all and (min-width: 768px) {
+  .pokemon {
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 640px;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .pokemon {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    width: 1080px;
+  }
+}

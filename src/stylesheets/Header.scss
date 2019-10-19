@@ -1,0 +1,16 @@
+.header__box {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 50px 0;
+  width: 100%;
+}
+
+.logo {
+  height: 100px;
+}
+
+@media all and (min-width: 768px) {
+  .logo {
+    height: 150px;
+  }
+}
