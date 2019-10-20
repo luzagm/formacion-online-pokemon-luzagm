@@ -6,7 +6,11 @@ const PokemonList = props => {
   const { loading } = props;
 
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <div className="loader">
+        <p>Loading...</p>
+      </div>
+    );
   } else if (props.pokemons.length === 0) {
     return (
       <div className="not__found">

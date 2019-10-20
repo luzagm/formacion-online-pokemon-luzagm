@@ -1,10 +1,15 @@
 .footer {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 
   &__text {
     padding-top: 50px;
     font-size: 18px;
     color: white;
   }
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
 }
