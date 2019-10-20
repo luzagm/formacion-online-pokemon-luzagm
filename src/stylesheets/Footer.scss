@@ -1,0 +1,10 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+
+  &__text {
+    padding-top: 50px;
+    font-size: 18px;
+    color: white;
+  }
+}

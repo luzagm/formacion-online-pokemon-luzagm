@@ -1,15 +1,20 @@
 import React from "react";
 import PokemonData from "../services/PokemonData";
 import Header from "./Header";
+import Filter from "./Filter";
 import PokemonList from "./PokemonList";
+import Footer from "./Footer";
 import "../stylesheets/App.scss";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      pokemons: []
+      pokemons: [],
+      inputValue: "",
+      loading: true
     };
+    this.searchByName = this.searchByName.bind(this);
   }
 
   componentDidMount() {
@@ -33,18 +38,38 @@ class App extends React.Component {
               types: types
             };
             this.setState({
-              pokemons: [...this.state.pokemons, pokemon]
+              pokemons: [...this.state.pokemons, pokemon],
+              loading: false
             });
           });
       }
     });
   }
 
+  searchByName(ev) {
+    const inputValue = ev.currentTarget.value;
+    return this.setState({
+      inputValue: inputValue
+    });
+  }
+
   render() {
+    let filterName = this.state.pokemons.filter(pokemon => {
+      return pokemon.name
+        .toUpperCase()
+        .includes(this.state.inputValue.toUpperCase());
+    });
+
     return (
       <div className="App">
         <Header />
-        <PokemonList className="pokemon__page" pokemons={this.state.pokemons} />
+        <Filter searchByName={this.searchByName} />
+        <PokemonList
+          className="pokemon__page"
+          pokemons={filterName}
+          loading={this.state.loading}
+        />
+        <Footer />
       </div>
     );
   }

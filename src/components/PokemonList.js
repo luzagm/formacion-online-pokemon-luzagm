@@ -3,11 +3,15 @@ import PokemonCard from "./PokemonCard";
 import "../stylesheets/PokemonList.scss";
 
 const PokemonList = props => {
-  if (props.pokemons.length === 0) {
+  const { loading } = props;
+
+  if (loading) {
+    return <p>Loading...</p>;
+  } else if (props.pokemons.length === 0) {
     return (
-      <div className="not-found">
-        <p className="not-found-text">
-          No hay pokemonss que coincidan con la búsqueda
+      <div className="not__found">
+        <p className="not__found--text">
+          No hay pokemons que coincidan con la búsqueda
         </p>
       </div>
     );
