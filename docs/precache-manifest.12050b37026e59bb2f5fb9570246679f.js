@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e7c4afb8794ab14de34d157361f30e6f",
+    "revision": "7c6d6e8af5ae8c89f60a7d7238bc8b04",
     "url": "./index.html"
   },
   {
-    "revision": "8a76b7615badfd74e72f",
-    "url": "./static/css/main.b9cd9487.chunk.css"
+    "revision": "e4ad01de932c39e4ee31",
+    "url": "./static/css/main.16e2f48c.chunk.css"
   },
   {
-    "revision": "6d0741a956e7d1496343",
-    "url": "./static/js/2.04a85b6c.chunk.js"
+    "revision": "beb24bfed2c462087544",
+    "url": "./static/js/2.03500a2c.chunk.js"
   },
   {
-    "revision": "8a76b7615badfd74e72f",
-    "url": "./static/js/main.a959ad43.chunk.js"
+    "revision": "e4ad01de932c39e4ee31",
+    "url": "./static/js/main.806c5e6e.chunk.js"
   },
   {
     "revision": "877a035caeacfb77bd89",
@@ -22,6 +22,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "c84553efaecfcb6576fc6a62cdb9d00b",
     "url": "./static/media/background.c84553ef.png"
+  },
+  {
+    "revision": "3f26bc9c866e180b778e63783c8e9ff7",
+    "url": "./static/media/ball-poke.3f26bc9c.png"
   },
   {
     "revision": "ddd5084dff8d7606019645f62c1712c6",

@@ -1,5 +1,6 @@
 import React from "react";
 import PokemonCard from "./PokemonCard";
+import Pokeball from "../images/ball-poke.png";
 import "../stylesheets/PokemonList.scss";
 
 const PokemonList = props => {
@@ -8,7 +9,7 @@ const PokemonList = props => {
   if (loading) {
     return (
       <div className="loader">
-        <p>Loading...</p>
+        <img className="pokeball" src={Pokeball} alt="Pokeball" />
       </div>
     );
   } else if (props.pokemons.length === 0) {
