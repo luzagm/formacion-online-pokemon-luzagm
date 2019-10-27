@@ -6,7 +6,7 @@ const Home = props => {
   return (
     <div className="App">
       <Filter searchByName={props.searchByName} />
-      <PokemonList pokemons={props.pokemons} />
+      <PokemonList pokemons={props.pokemons} loading={props.loading} />
     </div>
   );
 };

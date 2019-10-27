@@ -4,8 +4,6 @@ import PokemonData from "../services/PokemonData";
 import Header from "./Header";
 import Home from "./Home";
 import PokemonDetail from "./PokemonDetail";
-/* import Filter from "./Filter";
-import PokemonList from "./PokemonList"; */
 import Footer from "./Footer";
 import "../stylesheets/App.scss";
 
@@ -36,11 +34,23 @@ class App extends React.Component {
             for (let item of pokemonInfo.types) {
               types.push(item.type.name);
             }
+            const abilities = [];
+            for (let item of pokemonInfo.abilities) {
+              abilities.push(item.ability.name);
+            }
+            const moves = [];
+            for (let item of pokemonInfo.moves) {
+              moves.push(item.move.name);
+            }
             const pokemon = {
               name: pokemonInfo.name,
               image: pokemonInfo.sprites.front_default,
               id: pokemonInfo.id,
-              types: types
+              types: types,
+              abilities: abilities,
+              moves: moves,
+              height: pokemonInfo.height,
+              weight: pokemonInfo.weight
             };
             this.setState({
               pokemons: [...this.state.pokemons, pokemon],
@@ -93,12 +103,7 @@ class App extends React.Component {
           <Route exact path="/" component={this.renderOriginal} />
           <Route path="/detail/:id" render={this.renderDetail} />
         </Switch>
-        {/*  <Filter searchByName={this.searchByName} />
-        <PokemonList
-          className="pokemon__page"
-          pokemons={filterName}
-          loading={this.state.loading}
-        /> */}
+
         <Footer />
       </div>
     );

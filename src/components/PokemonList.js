@@ -33,7 +33,11 @@ const PokemonList = props => {
       );
     });
 
-    return <ul className="pokemon">{pokemonsList}</ul>;
+    return (
+      <div className="pokemon__wrapper">
+        <ul className="pokemon">{pokemonsList}</ul>
+      </div>
+    );
   }
 };
 

@@ -50,3 +50,8 @@
     color: black;
   }
 }
+
+.pokemon__card:hover {
+  background-color: gold;
+  box-shadow: 0 15px 20px black, 0 15px 15px rgba(0, 0, 0, 0.2);
+}

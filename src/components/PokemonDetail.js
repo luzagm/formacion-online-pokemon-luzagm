@@ -13,6 +13,10 @@ const PokemonDetail = props => {
           pokemonName={props.pokemon.name}
           pokemonImage={props.pokemon.image}
           pokemonType={props.pokemon.types}
+          pokemonHeight={props.pokemon.height}
+          pokemonWeight={props.pokemon.weight}
+          pokemonAbility={props.pokemon.abilities}
+          pokemonMoves={props.pokemon.moves}
           pokemonId={props.pokemon.id}
         />
         <Link className="back-link" to="/">
