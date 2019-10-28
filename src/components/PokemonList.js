@@ -4,6 +4,7 @@ import Pokeball from "../images/ball-poke.png";
 import "../stylesheets/PokemonList.scss";
 
 const PokemonList = props => {
+  console.log(props);
   const { loading } = props;
 
   if (loading) {
@@ -28,6 +29,7 @@ const PokemonList = props => {
           pokemonName={pokemon.name}
           pokemonImage={pokemon.image}
           pokemonType={pokemon.types}
+          pokemonEvolutionName={pokemon.firstEvolutionName}
           pokemonId={pokemon.id}
         />
       );

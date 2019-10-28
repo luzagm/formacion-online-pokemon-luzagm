@@ -20,6 +20,13 @@ const PokemonCard = props => {
           <ul className="pokemon__types">
             {renderPokemonTypes(props.pokemonType)}
           </ul>
+
+          <div className="pokemon__evolutions">
+            <p className="pokemon__evolutions--title">Evolves to:</p>
+            <p className="pokemon__evolutions--name">
+              {props.pokemonEvolutionName}
+            </p>
+          </div>
         </div>
       </Link>
     </li>

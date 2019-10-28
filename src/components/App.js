@@ -21,41 +21,55 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getPokemonData();
+    this.getPokemonInfo();
   }
 
-  getPokemonData() {
+  getPokemonInfo() {
     PokemonData().then(data => {
-      for (let item of data.results) {
-        fetch(item.url)
+      for (let pokemon of data.results) {
+        fetch(pokemon.url)
           .then(response => response.json())
           .then(pokemonInfo => {
-            const types = [];
-            for (let item of pokemonInfo.types) {
-              types.push(item.type.name);
-            }
-            const abilities = [];
-            for (let item of pokemonInfo.abilities) {
-              abilities.push(item.ability.name);
-            }
-            const moves = [];
-            for (let item of pokemonInfo.moves) {
-              moves.push(item.move.name);
-            }
-            const pokemon = {
-              name: pokemonInfo.name,
-              image: pokemonInfo.sprites.front_default,
-              id: pokemonInfo.id,
-              types: types,
-              abilities: abilities,
-              moves: moves,
-              height: pokemonInfo.height,
-              weight: pokemonInfo.weight
-            };
-            this.setState({
-              pokemons: [...this.state.pokemons, pokemon],
-              loading: false
-            });
+            fetch(pokemonInfo.species.url)
+              .then(response => response.json())
+              .then(pokemonSpecies => {
+                fetch(pokemonSpecies.evolution_chain.url)
+                  .then(response => response.json())
+                  .then(pokemonEvolutions => {
+                    const types = [];
+                    for (let item of pokemonInfo.types) {
+                      types.push(item.type.name);
+                    }
+                    const abilities = [];
+                    for (let item of pokemonInfo.abilities) {
+                      abilities.push(item.ability.name);
+                    }
+                    const moves = [];
+                    for (let item of pokemonInfo.moves) {
+                      moves.push(item.move.name);
+                    }
+                    const pokemon = {
+                      name: pokemonInfo.name,
+                      image: pokemonInfo.sprites.front_default,
+                      id: pokemonInfo.id,
+                      types: types,
+                      abilities: abilities,
+                      moves: moves,
+                      height: pokemonInfo.height,
+                      weight: pokemonInfo.weight,
+                      firstEvolutionName: pokemonEvolutions.chain.evolves_to[0]
+                        ? pokemonEvolutions.chain.evolves_to[0].species.name
+                        : ""
+                      /*   secondEvolutionName: pokemonEvolutions.chain.species
+                        ? pokemonEvolutions.chain.species.name
+                        : "" */
+                    };
+                    this.setState({
+                      pokemons: [...this.state.pokemons, pokemon],
+                      loading: false
+                    });
+                  });
+              });
           });
       }
     });

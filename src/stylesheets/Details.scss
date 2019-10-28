@@ -44,7 +44,7 @@
     line-height: 25px;
   }
 
-  &__profile--detail {
+  &__title--detail {
     margin-top: 10px;
     padding: 5px;
     font-size: 18px;
@@ -66,15 +66,6 @@
   &__weight--detail {
     padding-left: 5px;
     text-transform: capitalize;
-  }
-
-  &__movestitle--detail {
-    margin-top: 10px;
-    padding: 5px;
-    font-size: 18px;
-    text-align: left;
-    color: white;
-    background-color: rgb(160, 32, 32);
   }
 
   &__moves--detail {

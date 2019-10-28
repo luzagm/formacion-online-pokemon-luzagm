@@ -21,7 +21,7 @@ const Details = props => {
 
       <div className="pokemon__info--wrapper">
         <div>
-          <div className="pokemon__profile--detail">Profile</div>
+          <div className="pokemon__title--detail">Profile</div>
           <p className="pokemon__abilities--detail">
             <strong>Abilities:</strong>
             {renderPokemonAbilities(props.pokemonAbility)}
@@ -35,8 +35,22 @@ const Details = props => {
             </li>
           </ul>
         </div>
+
         <div>
-          <div className="pokemon__movestitle--detail">Moves</div>
+          <div>
+            <span className="pokemon__evolution--name">
+              {" "}
+              {props.pokemonName}
+            </span>{" "}
+            evolves to{" "}
+            <span className="pokemon__evolution--name">
+              {props.pokemonEvolutionName}
+            </span>
+          </div>
+        </div>
+
+        <div>
+          <div className="pokemon__title--detail">Moves</div>
           <p className="pokemon__moves--detail">
             {renderPokemonMoves(props.pokemonMoves)}
           </p>
