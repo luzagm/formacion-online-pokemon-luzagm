@@ -28,7 +28,9 @@ const PokemonList = props => {
           pokemonName={pokemon.name}
           pokemonImage={pokemon.image}
           pokemonType={pokemon.types}
-          pokemonEvolutionName={pokemon.firstEvolutionName}
+          pokemonEvotion={pokemon.evolution}
+          /* pokemonFirstEvolutionName={pokemon.firstEvolutionName}
+          pokemonSecondEvolutionName={pokemon.secondEvolutionName} */
           pokemonId={pokemon.id}
         />
       );

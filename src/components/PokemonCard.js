@@ -4,6 +4,8 @@ import renderPokemonTypes from "./renderPokemonType";
 import "../stylesheets/PokemonCard.scss";
 
 const PokemonCard = props => {
+  const nullEvolution = props.evolution === null ? "hidden" : "";
+
   return (
     <li className="pokemon__card">
       <Link className="pokemon__card-link" to={`/detail/${props.pokemonId}`}>
@@ -21,11 +23,9 @@ const PokemonCard = props => {
             {renderPokemonTypes(props.pokemonType)}
           </ul>
 
-          <div className="pokemon__evolutions">
-            <p className="pokemon__evolutions--title">Evolves to:</p>
-            <p className="pokemon__evolutions--name">
-              {props.pokemonEvolutionName}
-            </p>
+          <div className={`pokemon__evolutions ${nullEvolution}`}>
+            <p className="pokemon__evolutions--title">Evolves from:</p>
+            <p className="pokemon__evolutions--name">{props.pokemonEvotion}</p>
           </div>
         </div>
       </Link>

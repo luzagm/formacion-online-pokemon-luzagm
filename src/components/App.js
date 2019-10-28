@@ -57,11 +57,16 @@ class App extends React.Component {
                       moves: moves,
                       height: pokemonInfo.height,
                       weight: pokemonInfo.weight,
-                      firstEvolutionName: pokemonEvolutions.chain.evolves_to[0]
-                        ? pokemonEvolutions.chain.evolves_to[0].species.name
+                      evolution: pokemonSpecies.evolves_from_species
+                        ? pokemonSpecies.evolves_from_species.name
                         : ""
-                      /*   secondEvolutionName: pokemonEvolutions.chain.species
-                        ? pokemonEvolutions.chain.species.name
+                      /* firstEvolutionName: pokemonEvolutions.chain.evolves_to[0]
+                        ? pokemonEvolutions.chain.evolves_to[0].species.name
+                        : "",
+                      secondEvolutionName: pokemonEvolutions.chain.evolves_to[0]
+                        .evolves_to[0]
+                        ? pokemonEvolutions.chain.evolves_to[0].evolves_to[0]
+                            .species.name
                         : "" */
                     };
                     this.setState({
